@@ -49,6 +49,7 @@ module Transpec
     end
 
     def non_monkey_patch_expectation_available?
+      return true
       return @expectation_available if instance_variable_defined?(:@expectation_available)
       @expectation_available = match_scopes(NON_MONKEY_PATCH_EXPECTATION_AVAILABLE_CONTEXT)
     end
@@ -56,6 +57,7 @@ module Transpec
     alias_method :expect_available?, :non_monkey_patch_expectation_available?
 
     def non_monkey_patch_mock_available?
+      return true
       return @mock_available if instance_variable_defined?(:@mock_available)
       @mock_available = match_scopes(NON_MONKEY_PATCH_MOCK_AVAILABLE_CONTEXT)
     end
